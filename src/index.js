@@ -96,7 +96,7 @@ function xpForNextLevel(level) {
 // ─── HANDLER PRINCIPAL ────────────────────────────────────────────────────
 
 export default async function handler(sock, msg, config) {
-    const { prefixo, nomebot, numerodono, openaiKey } = config;
+    const { prefixo, nomebot, nomedono = '', numerodono, openaiKey = '' } = config;
 
     const jid = getJid(msg);
     const sender = getSender(msg);
