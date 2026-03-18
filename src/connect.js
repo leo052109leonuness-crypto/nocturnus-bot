@@ -1,4 +1,4 @@
-import a, { useMultiFileAuthState, DisconnectReason, makeCacheableSignalKeyStore, fetchLatestBaileysVersion } from 'whaileys';
+import a, { useMultiFileAuthState, DisconnectReason, makeCacheableSignalKeyStore, fetchLatestBaileysVersion, fetchLatestWaWebVersion } from 'whaileys';
 const makeWASocket = a.default;
 import { Boom } from '@hapi/boom';
 import NodeCache from 'node-cache';
@@ -58,7 +58,17 @@ async function startConnection(useCode = false) {
         await fs.mkdir(AUTH_DIR, { recursive: true });
 
         const { state, saveCreds } = await useMultiFileAuthState(AUTH_DIR);
-        const { version } = await fetchLatestBaileysVersion();
+        // Usar a versão mais recente do WhatsApp Web para evitar erro 405
+        let version;
+        try {
+            const result = await fetchLatestWaWebVersion();
+            version = result.version;
+            console.log(`📱 Versão WA Web: ${version.join('.')}`);
+        } catch {
+            const result = await fetchLatestBaileysVersion();
+            version = result.version;
+            console.log(`📱 Versão Baileys: ${version.join('.')}`);
+        }
 
         const msgRetryCounterCache = new NodeCache({ stdTTL: 120 });
         const messagesCache = new NodeCache({ stdTTL: 300, maxKeys: 500 });
@@ -71,7 +81,7 @@ async function startConnection(useCode = false) {
             },
             printQRInTerminal: false,
             logger,
-            browser: ['Ubuntu', 'Chrome', '22.0.0.0'],
+            browser: ['NOCTURNUS', 'Chrome', '120.0.6099.71'],
             syncFullHistory: false,
             markOnlineOnConnect: true,
             generateHighQualityLinkPreview: false,
