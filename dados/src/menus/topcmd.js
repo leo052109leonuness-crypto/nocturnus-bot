@@ -1,10 +1,10 @@
-async function menuTopCmd(prefix, botName = "MeuBot", userName = "Usuário", topCommands = [], {
-    header = `╭┈⊰ 🌸 『 *${botName}* 』\n┊Olá, #user#!\n╰─┈┈┈┈┈◜❁◞┈┈┈┈┈─╯`,
-    menuTopBorder = "╭┈",
-    bottomBorder = "╰─┈┈┈┈┈◜❁◞┈┈┈┈┈─╯",
-    menuTitleIcon = "🍧ฺꕸ▸",
-    menuItemIcon = "•.̇𖥨֗🍓⭟",
-    separatorIcon = "❁",
+async function menuTopCmd(prefix, botName = "NOCTURNUS", userName = "Usuário", topCommands = [], {
+    header = `╔═══━━━─── • ───━━━═══╗\n🌙 *𝙉𝙊𝘾𝙏𝙐𝙍𝙉𝙐𝙎*\n╚═══━━━─── • ───━━━═══╝\n┊✦ Olá, *#user#*... seja bem-vindo ao submundo.`,
+    menuTopBorder = "╭─────── ❖ ───────╮",
+    bottomBorder = "╰─────── ❖ ───────╯",
+    menuTitleIcon = "🌙",
+    menuItemIcon = "🌑 › ",
+    separatorIcon = "❖",
     middleBorder = "┊",
     topCommandsMenuTitle = "MAIS USADOS",
     infoSectionTitle = "Informações"

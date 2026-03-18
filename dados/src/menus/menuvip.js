@@ -3,12 +3,12 @@ import { groupVipCommandsByCategory, getVipStats } from '../utils/vipCommandsMan
 /**
  * Gera o menu VIP dinamicamente baseado nos comandos cadastrados
  */
-async function menuVIP(prefix, botName = "MeuBot", userName = "Usuário", {
-  header = `╭┈⊰ 🌸 『 *${botName}* 』\n┊Olá, #user#!\n╰─┈┈┈┈┈◜❁◞┈┈┈┈┈─╯`,
-  menuTopBorder = "╭┈",
-  bottomBorder = "╰─┈┈┈┈┈◜❁◞┈┈┈┈┈─╯",
-  menuItemIcon = "•.̇𖥨֗🍓⭟",
-  separatorIcon = "❁",
+async function menuVIP(prefix, botName = "NOCTURNUS", userName = "Usuário", {
+  header = `╔═══━━━─── • ───━━━═══╗\n🌙 *𝙉𝙊𝘾𝙏𝙐𝙍𝙉𝙐𝙎*\n╚═══━━━─── • ───━━━═══╝\n┊✦ Olá, *#user#*... seja bem-vindo ao submundo.`,
+  menuTopBorder = "╭─────── ❖ ───────╮",
+  bottomBorder = "╰─────── ❖ ───────╯",
+  menuItemIcon = "🌑 › ",
+  separatorIcon = "❖",
   middleBorder = "┊"
 } = {}) {
   try {
@@ -56,11 +56,11 @@ ${bottomBorder}
   }
 }
 
-async function menuVIPInfo(prefix, botName = "MeuBot", userName = "Usuário", {
-  header = `╭┈⊰ 🌸 『 *${botName}* 』\n┊Olá, #user#!\n╰─┈┈┈┈┈◜❁◞┈┈┈┈┈─╯`,
-  menuTopBorder = "╭┈",
-  bottomBorder = "╰─┈┈┈┈┈◜❁◞┈┈┈┈┈─╯",
-  separatorIcon = "❁",
+async function menuVIPInfo(prefix, botName = "NOCTURNUS", userName = "Usuário", {
+  header = `╔═══━━━─── • ───━━━═══╗\n🌙 *𝙉𝙊𝘾𝙏𝙐𝙍𝙉𝙐𝙎*\n╚═══━━━─── • ───━━━═══╝\n┊✦ Olá, *#user#*... seja bem-vindo ao submundo.`,
+  menuTopBorder = "╭─────── ❖ ───────╮",
+  bottomBorder = "╰─────── ❖ ───────╯",
+  separatorIcon = "❖",
   middleBorder = "┊"
 } = {}) {
   const stats = getVipStats();
@@ -95,12 +95,12 @@ ${bottomBorder}
   return info;
 }
 
-async function listVIPCommands(prefix, botName = "MeuBot", userName = "Usuário", {
-  header = `╭┈⊰ 🌸 『 *${botName}* 』\n┊Olá, #user#!\n╰─┈┈┈┈┈◜❁◞┈┈┈┈┈─╯`,
-  menuTopBorder = "╭┈",
-  bottomBorder = "╰─┈┈┈┈┈◜❁◞┈┈┈┈┈─╯",
-  menuItemIcon = "•.̇𖥨֗🍓⭟",
-  separatorIcon = "❁",
+async function listVIPCommands(prefix, botName = "NOCTURNUS", userName = "Usuário", {
+  header = `╔═══━━━─── • ───━━━═══╗\n🌙 *𝙉𝙊𝘾𝙏𝙐𝙍𝙉𝙐𝙎*\n╚═══━━━─── • ───━━━═══╝\n┊✦ Olá, *#user#*... seja bem-vindo ao submundo.`,
+  menuTopBorder = "╭─────── ❖ ───────╮",
+  bottomBorder = "╰─────── ❖ ───────╯",
+  menuItemIcon = "🌑 › ",
+  separatorIcon = "❖",
   middleBorder = "┊"
 } = {}) {
   const grouped = groupVipCommandsByCategory();

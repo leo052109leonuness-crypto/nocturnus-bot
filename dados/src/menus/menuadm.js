@@ -1,10 +1,10 @@
-export default async function menuadm(prefix, botName = "MeuBot", userName = "Usuário", {
-    header = `╭┈⊰ 🌸 『 *${botName}* 』\n┊Olá, #user#!\n╰─┈┈┈┈┈◜❁◞┈┈┈┈┈─╯`,
-    menuTopBorder = "╭┈",
-    bottomBorder = "╰─┈┈┈┈┈◜❁◞┈┈┈┈┈─╯",
-    menuTitleIcon = "🍧ฺꕸ▸",
-    menuItemIcon = "•.̇𖥨֗🍓⭟",
-    separatorIcon = "❁",
+export default async function menuadm(prefix, botName = "NOCTURNUS", userName = "Usuário", {
+    header = `╔═══━━━─── • ───━━━═══╗\n🌙 *𝙉𝙊𝘾𝙏𝙐𝙍𝙉𝙐𝙎*\n╚═══━━━─── • ───━━━═══╝\n┊✦ Olá, *#user#*... seja bem-vindo ao submundo.`,
+    menuTopBorder = "╭─────── ❖ ───────╮",
+    bottomBorder = "╰─────── ❖ ───────╯",
+    menuTitleIcon = "🌙",
+    menuItemIcon = "🌑 › ",
+    separatorIcon = "❖",
     middleBorder = "┊",
     adminMenuTitle = "🛡️ GESTÃO DE USUÁRIOS",
     managementMenuTitle = "💬 GESTÃO DO GRUPO",
