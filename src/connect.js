@@ -71,7 +71,7 @@ async function startConnection(useCode = false) {
             },
             printQRInTerminal: false,
             logger,
-            browser: ['NOCTURNUS', 'Chrome', '120.0.0'],
+            browser: ['Ubuntu', 'Chrome', '22.0.0.0'],
             syncFullHistory: false,
             markOnlineOnConnect: true,
             generateHighQualityLinkPreview: false,

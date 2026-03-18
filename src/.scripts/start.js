@@ -61,7 +61,6 @@ function startBot(codeMode = false) {
     botProcess = spawn('node', args, {
         stdio: 'inherit',
         env: { ...process.env, FORCE_COLOR: '1' },
-        shell: isWindows,
     });
 
     botProcess.on('error', (err) => {
