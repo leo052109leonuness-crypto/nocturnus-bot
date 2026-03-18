@@ -1,0 +1,34 @@
+{
+    "name": "nocturnus-bot",
+    "version": "1.0.0",
+    "description": "🌙 Bot avançado de WhatsApp com RPG, Economia, IA e Administração de Grupos",
+    "type": "module",
+    "main": "src/connect.js",
+    "scripts": {
+        "start": "node src/.scripts/start.js",
+        "dev": "nodemon src/.scripts/start.js",
+        "config": "node src/.scripts/config.js",
+        "update": "git pull && npm install --legacy-peer-deps"
+    },
+    "author": "NOCTURNUS",
+    "license": "MIT",
+    "dependencies": {
+        "@hapi/boom": "^10.0.1",
+        "axios": "^1.6.2",
+        "chalk": "^5.3.0",
+        "dotenv": "^16.3.1",
+        "node-cache": "^5.1.2",
+        "node-cron": "^3.0.3",
+        "pino": "^8.16.2",
+        "qrcode-terminal": "^0.12.0",
+        "sqlite": "^5.0.1",
+        "sqlite3": "^5.1.6",
+        "whaileys": "latest"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.2"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
