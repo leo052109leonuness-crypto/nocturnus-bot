@@ -1,8 +1,5 @@
 node_modules/
-src/database/session/
-src/config.json
-src/database/nocturnus.db
+dados/database/qr-code/
+dados/src/config.json
 *.log
 .env
-temp/
-logs/

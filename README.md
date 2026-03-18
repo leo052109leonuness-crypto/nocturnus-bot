@@ -1,52 +1,127 @@
-# 🌙 NOCTURNUS Bot
+# 🌙 NOCTURNUS Bot — Seu Assistente Completo para WhatsApp
 
-> Bot avançado de WhatsApp com RPG, Economia, IA e Administração de Grupos.
+> Bot avançado e multifuncional para WhatsApp, desenvolvido com **Node.js** e a biblioteca **WaLib (Whaileys)**. Focado em administração de grupos, RPG, economia, IA e entretenimento.
 
-## 🚀 Instalação Rápida
+---
 
-### 1. Clonar e instalar
+## ✨ Características
+
+- **Configuração Simples**: Conecte via QR Code ou código de pareamento
+- **Funcionalidade Completa**: Administração, RPG, downloads, IA, jogos e muito mais
+- **Multiplataforma**: Windows, Linux, macOS, Termux (Android) e VPS
+- **Estável e Seguro**: Baseado no modo multi-dispositivos do WhatsApp
+- **Modular**: Estrutura organizada e fácil de expandir
+
+---
+
+## 📋 Pré-requisitos
+
+| Item | Versão |
+|------|--------|
+| **Node.js** | >= 20.0.0 |
+| **npm** | >= 9.0.0 |
+| **Git** | Qualquer versão recente |
+
+---
+
+## 🚀 Instalação
+
+### Windows / Linux / macOS
+
 ```bash
 git clone https://github.com/leo052109leonuness-crypto/nocturnus-bot.git
 cd nocturnus-bot
-npm install --legacy-peer-deps
-```
-
-### 2. Configurar
-```bash
+npm install
 npm run config
-```
-Preencha: nome do bot, seu nome, seu número e prefixo.
-
-### 3. Iniciar
-```bash
 npm start
 ```
-Escaneie o QR Code com o WhatsApp.
+
+### Termux (Android)
+
+```bash
+pkg update && pkg upgrade -y
+pkg install nodejs git -y
+termux-setup-storage
+cd ~/storage/shared
+git clone https://github.com/leo052109leonuness-crypto/nocturnus-bot.git
+cd nocturnus-bot
+npm install
+npm run config
+npm start
+```
 
 ---
 
-## 📋 Comandos
+## ⚙️ Configuração
 
-| Categoria | Comandos |
-|-----------|---------|
-| 🔧 Utilidades | `!menu`, `!ping`, `!calc`, `!encurtar` |
-| 🎮 RPG | `!perfil`, `!trabalhar`, `!minerar`, `!pescar`, `!ranking`, `!dar` |
-| 🎭 Diversão | `!dado`, `!moeda`, `!rolar`, `!8ball`, `!quiz` |
-| 🤖 IA | `!gpt`, `!explicar`, `!resumir` |
-| 🔐 Admin | `!ban`, `!kick`, `!promover`, `!rebaixar`, `!adv`, `!setprefix` |
-| 👑 Dono | `!restart`, `!eval`, `!broadcast` |
+Execute `npm run config` e preencha:
+
+- 👤 **Nome do dono** — Seu nome
+- 📱 **Número do dono** — Seu número com código do país (ex: `5511999999999`)
+- 🤖 **Nome do bot** — NOCTURNUS (ou o que preferir)
+- 🔣 **Prefixo** — `/` ou `!` (padrão: `/`)
 
 ---
 
-## ⚙️ Tecnologias
+## 🔌 Conectando ao WhatsApp
 
-- **Node.js** (ESM)
-- **Whaileys** (Baileys fork)
-- **SQLite** (banco de dados)
-- **OpenAI** (IA opcional)
+Ao iniciar com `npm start`, escolha:
+
+- **Opção 1** — QR Code (recomendado para internet instável)
+- **Opção 2** — Código de pareamento
+
+> ⚠️ **Use sempre um número secundário para o bot!**
 
 ---
 
-## 📱 Compatível com
+## 📋 Comandos Disponíveis
 
-✅ Windows | ✅ Linux | ✅ Termux | ✅ VPS
+Use `/menu` para ver o menu principal. Submenus disponíveis:
+
+| Comando | Descrição |
+|---------|-----------|
+| `/menu` | Menu principal |
+| `/menuadm` | Comandos de administração |
+| `/menurpg` | RPG e economia |
+| `/menubn` | Jogos e diversão |
+| `/menudown` | Downloads |
+| `/menuia` | Inteligência Artificial |
+| `/menufig` | Figurinhas |
+| `/menumemb` | Membros |
+| `/ferramentas` | Ferramentas úteis |
+| `/menudono` | Comandos do dono |
+
+---
+
+## 🔄 Atualizando
+
+```bash
+npm run update
+```
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+nocturnus-bot/
+├── dados/
+│   ├── src/
+│   │   ├── .scripts/       # start, config, update
+│   │   ├── funcs/
+│   │   │   ├── downloads/  # youtube, tiktok, spotify...
+│   │   │   ├── json/       # dados dos jogos
+│   │   │   ├── private/    # IA, antipalavra, antitoxic
+│   │   │   └── utils/      # sticker, emojimix, games...
+│   │   ├── menus/          # todos os menus
+│   │   ├── utils/          # database, helpers, cache...
+│   │   ├── connect.js      # conexão WhatsApp
+│   │   └── index.js        # loader de menus
+│   ├── database/           # dados salvos
+│   └── midias/             # imagens do bot
+└── package.json
+```
+
+---
+
+*🌙 NOCTURNUS Bot — Feito para comunidades*
