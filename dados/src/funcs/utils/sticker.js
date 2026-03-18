@@ -5,9 +5,24 @@ import { fileURLToPath } from 'url';
 import webp from 'node-webpmux';
 import axios from 'axios';
 import ffmpeg from 'fluent-ffmpeg';
+import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Detectar ffmpeg automaticamente (Windows e Linux/Mac)
+(function setFfmpegAuto() {
+  try {
+    // Tenta encontrar ffmpeg no PATH do sistema
+    const cmd = process.platform === 'win32' ? 'where ffmpeg' : 'which ffmpeg';
+    const p = execSync(cmd, { encoding: 'utf8', stdio: ['pipe','pipe','pipe'] }).trim().split('\n')[0].trim();
+    if (p) {
+      ffmpeg.setFfmpegPath(p);
+    }
+  } catch {
+    // Se não encontrar, o fluent-ffmpeg usará o PATH padrão
+  }
+})();
 
 // Diretório temporário
 function ensureTmpDir() {
@@ -136,10 +151,10 @@ async function writeExif(webpBuffer, metadata) {
     const img = new webp.Image();
     await img.load(webpBuffer);
     const json = {
-      "sticker-pack-id": "https://github.com/hiudyy",
+      "sticker-pack-id": "https://github.com/leo052109leonuness-crypto/nocturnus-bot",
       "sticker-pack-name": metadata.packname || "",
       "sticker-pack-publisher": metadata.author || "",
-      "emojis": ["NazuninhaBot"]
+      "emojis": ["🌙"]
     };
     const exifAttr = Buffer.from([
       0x49, 0x49, 0x2A, 0x00,

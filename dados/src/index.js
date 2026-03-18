@@ -618,7 +618,7 @@ setInterval(() => {
   saveJidLidCache();
 }, 5 * 60 * 1000);
   
-async function NazuninhaBotExec(nazu, info, store, messagesCache, rentalExpirationManager = null) {
+async function NocturnusBotExec(nazu, info, store, messagesCache, rentalExpirationManager = null) {
   // Log de início de processamento para debug paralelo
   const msgId = info?.key?.id?.slice(-6) || 'unknown';
   const from = info?.key?.remoteJid || 'unknown';
@@ -3646,7 +3646,7 @@ Código: *${roleCode}*`,
           const shouldForceSquare = global.autoStickerMode === 'square';
           await sendSticker(nazu, from, {
             sticker: buffer,
-            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『cognima.com.br』`,
+            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『github.com/leo052109leonuness-crypto/nocturnus-bot』`,
             packname: '👤 Usuario(a)ᮀ۟❁’￫\n🤖 Botᮀ۟❁’￫\n👑 Donoᮀ۟❁’￫\n🌐 Siteᮀ۟❁’￫',
             type: isVideo ? 'video' : 'image',
             forceSquare: shouldForceSquare
@@ -15270,7 +15270,7 @@ Seja específico e recomende opções variadas (populares e menos conhecidas). F
         if (!q) return reply(`📢 Ei, falta a pergunta! Me diga o que quer saber após o comando ${prefix}cog! 😴`);
         
         reply('⏳ Um momentinho, estou pensando na melhor resposta... 🌟').then(() => {
-          ia.makeCognimaRequest('cognima/CognimAI', q, null).then((response) => {
+          ia.makeAssistentRequest({ model: 'gpt-4.1-mini', messages: [{ role: 'user', content: q }] }).then((response) => {
             reply(formatAIResponse(response.data.choices[0].message.content));
           }).catch((e) => {
             console.error('Erro na API CognimAI:', e);
@@ -18192,7 +18192,7 @@ Exemplo: ${prefix}tradutor espanhol | Olá mundo! ✨`);
       case 'encurtalink':
       case 'tinyurl':
         try {
-          if (!q) return reply(`❌️ *Forma incorreta, use está como exemplo:* ${prefix + command} https://instagram.com/hiudyyy_`);
+          if (!q) return reply(`❌️ *Forma incorreta, use está como exemplo:* ${prefix + command} https://github.com/leo052109leonuness-crypto/nocturnus-bot`);
           const shortResponse = await axios.post("https://spoo.me/api/v1/shorten", { 
             long_url: q, 
             alias: `nocturnus_${Math.floor(10000 + Math.random() * 90000)}` 
@@ -23831,8 +23831,8 @@ ${prefix}togglecmdvip premium_ia off`);
 │
 │ 💎 *Nome:* Hiudy
 │ 📱 *WhatsApp:* wa.me/553391967445
-│ 🌐 *GitHub:* github.com/hiudyy
-│ 📸 *Instagram:* instagram.com/hiudyyy_
+│ 🌐 *GitHub:* github.com/leo052109leonuness-crypto/nocturnus-bot
+│ 📸 *Instagram:* github.com/leo052109leonuness-crypto/nocturnus-bot
 │
 ╰━━━━━━━━━━━━━━━━━━━━━━━━╯`;
           await reply(TextinCriadorInfo);
@@ -24095,7 +24095,7 @@ ${prefix}togglecmdvip premium_ia off`);
           });
           await sendSticker(nazu, from, {
             sticker: Buffer.from(res.data.result.image, 'base64'),
-            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『cognima.com.br』`,
+            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『github.com/leo052109leonuness-crypto/nocturnus-bot』`,
             packname: '👤 Usuario(a)ᮀ۟❁’￫\n🤖 Botᮀ۟❁’￫\n👑 Donoᮀ۟❁’￫\n🌐 Siteᮀ۟❁’￫',
             type: 'image'
           }, {
@@ -24119,7 +24119,7 @@ ${prefix}togglecmdvip premium_ia off`);
             sticker: {
               url: datzc
             },
-            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『cognima.com.br』`,
+            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『github.com/leo052109leonuness-crypto/nocturnus-bot』`,
             packname: '👤 Usuario(a)ᮀ۟❁’￫\n🤖 Botᮀ۟❁’￫\n👑 Donoᮀ۟❁’￫\n🌐 Siteᮀ۟❁’￫',
             type: 'image'
           }, {
@@ -24168,7 +24168,7 @@ ${prefix}togglecmdvip premium_ia off`);
             sticker: {
               url: `https://huratera.sirv.com/PicsArt_08-01-10.00.42.png?profile=Example-Text&text.0.text=${encodeURIComponent(processedText)}&text.0.outline.color=000000&text.0.outline.blur=0&text.0.outline.opacity=55&text.0.color=${cores}&text.0.font.family=${fontes}&text.0.font.weight=bold&text.0.background.color=ff0000`
             },
-            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『cognima.com.br』`,
+            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『github.com/leo052109leonuness-crypto/nocturnus-bot』`,
             packname: '👤 Usuario(a)ᮀ۟❁’￫\n🤖 Botᮀ۟❁’￫\n👑 Donoᮀ۟❁’￫\n🌐 Siteᮀ۟❁’￫',
             type: 'image'
           }, {
@@ -24265,7 +24265,7 @@ ${prefix}togglecmdvip premium_ia off`);
           // Enviar sticker
           await sendSticker(nazu, from, {
             sticker: fs.readFileSync(outputWebp),
-            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『cognima.com.br』`,
+            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『github.com/leo052109leonuness-crypto/nocturnus-bot』`,
             packname: `👤 Usuario(a)ᮀ۟❁'￫\n🤖 Botᮀ۟❁'￫\n👑 Donoᮀ۟❁'￫\n🌐 Siteᮀ۟❁'￫`,
             type: 'image'
           }, {
@@ -24324,7 +24324,7 @@ ${prefix}togglecmdvip premium_ia off`);
           var buffer = await getFileBuffer(isVideo2 ? boij : boij2, isVideo2 ? 'video' : 'image');
           await sendSticker(nazu, from, {
             sticker: buffer,
-            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『cognima.com.br』`,
+            author: `『${pushname}』\n『${nomebot}』\n『${nomedono}』\n『github.com/leo052109leonuness-crypto/nocturnus-bot』`,
             packname: '👤 Usuario(a)ᮀ۟❁’￫\n🤖 Botᮀ۟❁’￫\n👑 Donoᮀ۟❁’￫\n🌐 Siteᮀ۟❁’￫',
             type: isVideo2 ? 'video' : 'image'
           }, {
@@ -31258,4 +31258,4 @@ function getDiskSpaceInfo() {
     };
   }
 }
-export default NazuninhaBotExec;
+export default NocturnusBotExec;
