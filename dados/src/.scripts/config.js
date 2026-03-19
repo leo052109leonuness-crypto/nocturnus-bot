@@ -4,7 +4,7 @@ import fs from 'fs/promises';
 import fsSync from 'fs';
 import path from 'path';
 import { exec, spawn } from 'child_process';
-import readline from 'readline';
+import readline from 'readline/promises';
 import os from 'os';
 import { promisify } from 'util';
 
@@ -94,9 +94,8 @@ async function runCommandInherit(cmd, args = []) {
 async function promptInput(rl, prompt, defaultValue, validator = () => true) {
     let value; let isValid = false;
     while (!isValid) {
-        const displayPrompt = `${prompt} ${colors.dim}(atual: ${defaultValue})${colors.reset}:`;
-        console.log(displayPrompt);
-        value = await new Promise(resolve => rl.question("--> ", resolve));
+        const displayPrompt = `${prompt} ${colors.dim}(atual: ${defaultValue || 'vazio'})${colors.reset}:\n--> `;
+        value = await rl.question(displayPrompt);
         value = value.trim() || defaultValue;
         isValid = validator(value);
         if (!isValid) print.warning('   ➡️ Entrada inválida. Por favor, tente novamente.');
@@ -106,8 +105,7 @@ async function promptInput(rl, prompt, defaultValue, validator = () => true) {
 
 async function confirm(rl, prompt, defaultValue = 'n') {
     const defaultText = defaultValue.toLowerCase() === 's' ? 'S/n' : 's/N';
-    console.log(`${prompt} (${defaultText}): `);
-    const response = await new Promise(resolve => rl.question("--> ", resolve));
+    const response = await rl.question(`${prompt} (${defaultText}):\n--> `);
     const normalized = (response.trim() || defaultValue).toLowerCase();
     return ['s', 'sim', 'y', 'yes'].includes(normalized);
 }
@@ -251,7 +249,7 @@ async function main() {
         print.info('📂 Configuração existente carregada.');
     } catch {  }
 
-    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout, terminal: true });
     
     print.info(`${colors.bold}${colors.underline}🔧 Configurações Básicas${colors.reset}`);
     config.nomedono = await promptInput(rl, '👤 Nome do dono do bot', config.nomedono);
