@@ -31,8 +31,8 @@ const print = {
     separator: () => console.log(`${colors.blue}=================================================${colors.reset}`),
     header: () => {
         print.separator();
-        console.log(`${colors.bold}🚀 Configurador Gênesis NOCTURNUS - Versão ${version}${colors.reset}`);
-        console.log(`${colors.bold}👨‍💻 Criado por Hiudy${colors.reset}`);
+        console.log(`${colors.bold}🌙 Configurador NOCTURNUS - Versão ${version}${colors.reset}`);
+        console.log(`${colors.bold}🌑 Bot avançado para comunidades${colors.reset}`);
         print.separator(); console.log();
     }
 };
@@ -255,7 +255,7 @@ async function main() {
     
     print.info(`${colors.bold}${colors.underline}🔧 Configurações Básicas${colors.reset}`);
     config.nomedono = await promptInput(rl, '👤 Nome do dono do bot', config.nomedono);
-    config.numerodono = await promptInput(rl, '📱 Número do dono (apenas dígitos)', config.numerodono, (v) => /^\d{10,15}$/.test(v));
+    config.numerodono = await promptInput(rl, '📱 Número do dono com código do país (ex: 5511999999999)', config.numerodono, (v) => /^\d{8,15}$/.test(v));
     config.nomebot = await promptInput(rl, '🤖 Nome do bot', config.nomebot);
     config.prefixo = await promptInput(rl, '🔣 Prefixo do bot (1 caractere)', config.prefixo, (v) => v.length === 1);
 

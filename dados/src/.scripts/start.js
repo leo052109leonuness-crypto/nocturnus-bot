@@ -126,7 +126,7 @@ function setupGracefulShutdown() {
 
 async function displayHeader() {
   const header = [
-    `${colors.bold}🚀 NOCTURNUS - Conexão WhatsApp${colors.reset}`,
+    `${colors.bold}🌙 NOCTURNUS - Conexão WhatsApp${colors.reset}`,
     `${colors.bold}📦 Versão: ${version}${colors.reset}`,
   ];
 
@@ -144,7 +144,7 @@ async function checkPrerequisites() {
     aviso('⚠️ Arquivo de configuração (config.json) não encontrado! Iniciando configuração automática...');
     try {
       await new Promise((resolve, reject) => {
-        const configProcess = spawn('npm', ['run', 'config'], { stdio: 'inherit', shell: isWindows });
+        const configProcess = spawn('npm', ['run', 'config'], { stdio: 'inherit', shell: true });
         configProcess.on('close', (code) => (code === 0 ? resolve() : reject(new Error(`Configuração falhou com código ${code}`))));
         configProcess.on('error', reject);
       });
@@ -160,7 +160,7 @@ async function checkPrerequisites() {
     aviso('⚠️ Módulos do Node.js não encontrados! Iniciando instalação automática...');
     try {
       await new Promise((resolve, reject) => {
-        const installProcess = spawn('npm', ['run', 'config:install'], { stdio: 'inherit', shell: isWindows });
+        const installProcess = spawn('npm', ['run', 'config:install'], { stdio: 'inherit', shell: true });
         installProcess.on('close', (code) => (code === 0 ? resolve() : reject(new Error(`Instalação falhou com código ${code}`))));
         installProcess.on('error', reject);
       });

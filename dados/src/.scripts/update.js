@@ -62,8 +62,8 @@ function setupGracefulShutdown() {
 
 async function displayHeader() {
   const header = [
-    `${colors.bold}🚀 NOCTURNUS - Atualizador${colors.reset}`,
-    `${colors.bold}👨‍💻 Criado por Hiudy${colors.reset}`,
+    `${colors.bold}🌙 NOCTURNUS - Atualizador${colors.reset}`,
+    `${colors.bold}🌑 Bot avançado para comunidades${colors.reset}`,
   ];
 
   printSeparator();
@@ -200,7 +200,7 @@ async function createBackup() {
 }
 
 async function downloadUpdate() {
-  printMessage('📥 Baixando a versão mais recente do NOCTURNUS...');
+    printMessage('📥 Baixando a versão mais recente do NOCTURNUS...');
 
   try {
     // Validate temp directory path
