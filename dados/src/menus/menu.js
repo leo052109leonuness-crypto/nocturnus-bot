@@ -2,16 +2,18 @@ export default async function menu(prefix, botName = "NOCTURNUS", userName = "Us
     header = `╔═══━━━─── • ───━━━═══╗\n🌙 *𝙉𝙊𝘾𝙏𝙐𝙍𝙉𝙐𝙎*\n╚═══━━━─── • ───━━━═══╝\n┊✦ Olá, *#user#*... seja bem-vindo ao submundo.`,
     menuTopBorder = "╭─────── ❖ ───────╮",
     bottomBorder = "╰─────── ❖ ───────╯",
-    menuTitleIcon = "🌙",
+    menuTitleIcon = "❖",
     menuItemIcon = "🌑 › ",
-    separatorIcon = "❖",
+    separatorIcon = "•",
     middleBorder = "┊"
 } = {}) {
     const formattedHeader = header.replace(/#user#/g, userName);
     return `${formattedHeader}
 ${menuTopBorder}
 ${middleBorder}  𝙈𝙀𝙉𝙐 𝙋𝙍𝙄𝙉𝘾𝙄𝙋𝘼𝙇
-${menuTopBorder}
+${bottomBorder}
+${middleBorder}
+${middleBorder} ${menuTitleIcon} *𝙉𝘼𝙑𝙀𝙂𝘼𝙍* ${menuTitleIcon}
 ${middleBorder}${menuItemIcon}${prefix}menuia
 ${middleBorder}${menuItemIcon}${prefix}menudown
 ${middleBorder}${menuItemIcon}${prefix}menulogos
@@ -24,7 +26,8 @@ ${middleBorder}${menuItemIcon}${prefix}menufig
 ${middleBorder}${menuItemIcon}${prefix}alteradores
 ${middleBorder}${menuItemIcon}${prefix}menurpg
 ${middleBorder}${menuItemIcon}${prefix}menuvip
-${bottomBorder}
+${middleBorder}
+${menuTopBorder}
 ${middleBorder} ✦ Escolha seu destino com sabedoria...
 ${bottomBorder}`;
 }

@@ -1,45 +1,19 @@
-async function menuTopCmd(prefix, botName = "NOCTURNUS", userName = "Usuário", topCommands = [], {
+export default async function topcmd(prefix, botName = "NOCTURNUS", userName = "Usuário", {
     header = `╔═══━━━─── • ───━━━═══╗\n🌙 *𝙉𝙊𝘾𝙏𝙐𝙍𝙉𝙐𝙎*\n╚═══━━━─── • ───━━━═══╝\n┊✦ Olá, *#user#*... seja bem-vindo ao submundo.`,
     menuTopBorder = "╭─────── ❖ ───────╮",
     bottomBorder = "╰─────── ❖ ───────╯",
-    menuTitleIcon = "🌙",
+    menuTitleIcon = "❖",
     menuItemIcon = "🌑 › ",
-    separatorIcon = "❖",
-    middleBorder = "┊",
-    topCommandsMenuTitle = "MAIS USADOS",
-    infoSectionTitle = "Informações"
+    separatorIcon = "•",
+    middleBorder = "┊"
 } = {}) {
     const formattedHeader = header.replace(/#user#/g, userName);
-    if (!topCommands || topCommands.length === 0) {
-        return `${formattedHeader}
-
-${menuTopBorder}${separatorIcon} *${topCommandsMenuTitle}*
-${middleBorder}
-${middleBorder} Nenhum comando foi registrado ainda.
-${middleBorder} Use ${prefix}menu para ver a lista
-${middleBorder} de comandos disponíveis!
-${middleBorder}
+    return `${formattedHeader}
+${menuTopBorder}
+${middleBorder}  𝙏𝙊𝙋 𝘾𝙊𝙈𝘼𝙉𝘿𝙊𝙎
 ${bottomBorder}
-`;
-    }
-    const commandsList = topCommands.map((cmd, index) => {
-        const position = index + 1;
-        const emoji = position <= 3 ? ['🥇', '🥈', '🥉'][index] : '🏅';
-        return `${middleBorder}${emoji} ${position}º: *${prefix}${cmd.name}*\n${middleBorder}   ↳ ${cmd.count} usos por ${cmd.uniqueUsers} usuários`;
-    }).join('\n');
-    return `
-${formattedHeader}
-
-${menuTopBorder}${separatorIcon} *Top ${topCommands.length} Comandos*
-${commandsList}
 ${middleBorder}
-${middleBorder}╭─▸ *${infoSectionTitle}:*
-${middleBorder}
-${middleBorder}🔍 Use ${prefix}cmdinfo [comando]
-${middleBorder}   ↳ Para ver estatísticas detalhadas
-${middleBorder}   ↳ Ex: ${prefix}cmdinfo menu
-${middleBorder}
-${bottomBorder}
-`;
+${menuTopBorder}
+${middleBorder} ✦ Os comandos mais usados do submundo.
+${bottomBorder}`;
 }
-export default menuTopCmd;
